@@ -94,17 +94,17 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("➕ Add me to a Group ➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("➕ اضافه الي الحروب بتاعك ➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")
+                    InlineKeyboardButton("❓ الدليل", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("📚 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("📚 الاوامر", callback_data="command_list"),
+                    InlineKeyboardButton("❤️ لي التبرع", url=f"https://t.me/{OWNER_USERNAME}")
                 ],[
-                    InlineKeyboardButton("👥 Support Group", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("📣 Support Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("👥 جروب المساعده", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("📣 قناه التحديثات", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("🌐 Source Code", url="https://github.com/levina-lab/video-stream")
+                    InlineKeyboardButton("🌐 لي التنصيب اضغط هنا", url="https://t.me/MUSTAR_X")
                 ],
             ]
         ),
@@ -124,9 +124,9 @@ async def alive(c: Client, message: Message):
     buttons = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton("✨ الجروب", url=f"https://t.me/{GROUP_SUPPORT}"),
                 InlineKeyboardButton(
-                    "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "📣 القناه", url=f"https://t.me/{UPDATES_CHANNEL}"
                 ),
             ]
         ]
@@ -146,7 +146,7 @@ async def ping_pong(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
-    await m_reply.edit_text("🏓 PONG !\n" f"⏱ `{delta_ping * 1000:.3f} ms`")
+    await m_reply.edit_text("🏓 البنج !\n" f"⏱ `{delta_ping * 1000:.3f} ms`")
 
 
 @Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}"]) & ~filters.edited)
@@ -184,21 +184,21 @@ async def new_chat(c: Client, m: Message):
             if member.id == me_bot.id:
                 if chat_id in await blacklisted_chats():
                     await m.reply_text(
-                        "❗️ This chat has blacklisted by sudo user and You're not allowed to use me in this chat."
+                        "❗️ ذه الدردشة في القائمة السوداء بمستخدم مستر اكس شوف عملت لي اي و روح قولو اسف وأنت غير مسموح لك باستخدامي في هذه الدردشة."
                     )
                     return await bot.leave_chat(chat_id)
             if member.id == me_bot.id:
                 return await m.reply(
-                    "❤️ Thanks for adding me to the **Group** !\n\n"
-                    "Appoint me as administrator in the **Group**, otherwise I will not be able to work properly, and don't forget to type `/userbotjoin` for invite the assistant.\n\n"
-                    "Once done, then type `/reload`",
+                    "❤️ شكرا لإضافتي إلى **Group** !\n\n"
+                    "هات مشرف في **Group**, وإلا لن أكون قادرا على العمل بشكل صحيح، ولا تنسى الكتابة `/userbotjoin` لدعوة المساعد.\n\n"
+                    "بمجرد الانتهاء، ثم اكتب `/reload`",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                                InlineKeyboardButton("💭 Support", url=f"https://t.me/{GROUP_SUPPORT}")
+                                InlineKeyboardButton("📣 القناه", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                                InlineKeyboardButton("💭 الدعم", url=f"https://t.me/{GROUP_SUPPORT}")
                             ],[
-                                InlineKeyboardButton("👤 Assistant", url=f"https://t.me/{me_user.username}")
+                                InlineKeyboardButton("👤 المساعد", url=f"https://t.me/{me_user.username}")
                             ]
                         ]
                     )
@@ -221,5 +221,5 @@ async def chat_watcher_func(_, message: Message):
             LOGS.info(f"can't remove gbanned user from chat: {message.chat.id}")
             return
         await message.reply_text(
-            f"👮🏼 (> {suspect} <)\n\n**Gbanned** user detected, that user has been gbanned by sudo user and was blocked from this Chat !\n\n🚫 **Reason:** potential spammer and abuser."
+            f"👮🏼 (> {suspect} <)\n\n**Gbanned** تم اكتشاف المستخدم، وقد تم غلبة المستخدم من قبل مستخدم مستر اكس وتم حظره من هذه الدردشة !\n\n🚫 **Reason:** potential spammer and abuser."
         )
