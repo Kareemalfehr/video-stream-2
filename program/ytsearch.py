@@ -29,17 +29,17 @@ from youtube_search import YoutubeSearch
 @check_blacklist()
 async def youtube_search(_, message: Message):
     if len(message.command) < 2:
-        return await message.reply_text("/search **needs an argument !**")
+        return await message.reply_text("/search **يحتاج الي وسيطه !**")
     query = message.text.split(None, 1)[1]
-    m = await message.reply_text("🔍 **Searching...**")
+    m = await message.reply_text("🔍 **جاري البحث...**")
     results = YoutubeSearch(query, max_results=5).to_dict()
     text = ""
     for i in range(5):
         try:
-            text += f"🏷 **Name:** __{results[i]['title']}__\n"
-            text += f"⏱ **Duration:** `{results[i]['duration']}`\n"
-            text += f"👀 **Views:** `{results[i]['views']}`\n"
-            text += f"📣 **Channel:** {results[i]['channel']}\n"
+            text += f"🏷 **الاسم:** __{results[i]['title']}__\n"
+            text += f"⏱ **الزمن:** `{results[i]['duration']}`\n"
+            text += f"👀 **المشاهدات:** `{results[i]['views']}`\n"
+            text += f"📣 **القناه:** {results[i]['channel']}\n"
             text += f"🔗 **Link:** https://www.youtube.com{results[i]['url_suffix']}\n\n"
         except IndexError:
             break
@@ -47,6 +47,6 @@ async def youtube_search(_, message: Message):
         text,
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🗑 Close", callback_data="close_panel")]]
+            [[InlineKeyboardButton("🗑حذف ", callback_data="close_panel")]]
         ),
     )
