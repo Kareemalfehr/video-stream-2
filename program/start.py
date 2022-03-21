@@ -85,11 +85,11 @@ async def start_(c: Client, message: Message):
     await add_served_user(user_id)
     await message.reply_text(
         f"""Hi {message.from_user.mention()} 👋🏻\n
-💭 [{me_bot.first_name}](https://t.me/{me_bot.username}) is a bot to play music and video in groups, through the new Telegram video chats.
+💭 [{me_bot.first_name}](https://t.me/{me_bot.username}) هو روبوت لتشغيل الموسيقى والفيديو في مجموعات، من خلال دردشات الفيديو برقية جديدة.
 
-🕵🏻 Check out all the **Bot's commands** and how they work by clicking on the » 📚 **Commands** button!
+🕵🏻 تحقق من الكل **اوامر البوت** وكيف يعملون بالضغط على » 📚 **Commands** button!
 
-🧑🏻‍💻 To know how to use this bot, please click on the » ❓ **Basic Guide** button!
+🧑🏻‍💻 لمعرفة كيفية استخدام هذا الروبوت، يرجى النقر على » ❓ **Basic Guide** button!
 """,
         reply_markup=InlineKeyboardMarkup(
             [
