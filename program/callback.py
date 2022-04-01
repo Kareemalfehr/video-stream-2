@@ -49,17 +49,17 @@ async def start_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("➕ Add me to a Group ➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
+                    InlineKeyboardButton("➕ ضفني في مجموعه او جروب ➕", url=f"https://t.me/{me_bot.username}?startgroup=true")
                 ],[
-                    InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")
+                    InlineKeyboardButton("❓ دليل الاستخدام", callback_data="user_guide")
                 ],[
-                    InlineKeyboardButton("📚 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_USERNAME}")
+                    InlineKeyboardButton("📚 الاوامر", callback_data="command_list"),
+                    InlineKeyboardButton("❤️ لي تبرع لي البوت", url=f"https://t.me/{OWNER_USERNAME}")
                 ],[
-                    InlineKeyboardButton("👥 Support Group", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    InlineKeyboardButton("📣 Support Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                    InlineKeyboardButton("👥 جروب البوت ", url=f"https://t.me/{GROUP_SUPPORT}"),
+                    InlineKeyboardButton("📣 قناه البوت" , url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
-                    InlineKeyboardButton("🌐 Source Code", url="https://github.com/levina-lab/video-stream")
+                    InlineKeyboardButton("🌐 لي التنصيب", url="t.me/MUSTAR_X")
                 ],
             ]
         ),
